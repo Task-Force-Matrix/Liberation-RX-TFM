@@ -16,7 +16,8 @@ R3F_LOG_CFG_can_lift = R3F_LOG_CFG_can_lift +
 R3F_LOG_CFG_can_be_lifted = R3F_LOG_CFG_can_be_lifted +
 [
 	"Slingload_01_Base_F",
-	"Pod_Heli_Transport_04_base_F"
+	"Pod_Heli_Transport_04_base_F",
+	JeroenArsenal_typename
 ];
 
 R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
@@ -208,7 +209,8 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["Box_NATO_Support_F", 6],
 	[canister_fuel_typename, 1],
 	["Land_TentLamp_01_suspended_F", 1],
-    ["Land_TentLamp_01_suspended_red_F", 1]
+    ["Land_TentLamp_01_suspended_red_F", 1],
+	[JeroenArsenal_typename, 12]						 
 ];
 
 R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
@@ -244,7 +246,8 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 	"Land_BagBunker_Small_F",
 	//"Land_BagBunker_Tower_F",
 	"CamoNet_BLUFOR_open_F",
-	"CamoNet_BLUFOR_big_F"
+	"CamoNet_BLUFOR_big_F",
+	JeroenArsenal_typename			   
 ];
 
 R3F_LOG_CFG_can_be_lifted = R3F_LOG_CFG_can_be_lifted +

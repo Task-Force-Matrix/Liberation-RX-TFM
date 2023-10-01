@@ -30,11 +30,19 @@ if (GRLIB_enable_arsenal == 0) then {
 	sleep 1;
 	private _ammo_pos = (getposATL _sign) vectorAdd ([[10, 0, 0], -(getDir _sign) - 90] call BIS_fnc_rotateVector2D);
 	{
-		_ammo1 = createVehicle [_x, _ammo_pos, [], 1, "NONE"];
-		_ammo1 allowDamage false;
-		_ammo1 setVariable ["GRLIB_vehicle_owner", "public", true];
-		_ammo1 setVariable ["R3F_LOG_disabled", true, true];
-		if (_x == Arsenal_typename) then { _ammo1 addItemCargoGlobal ["SatchelCharge_Remote_Mag", 2] };
+		if (_x != JeroenArsenal_typename || isNil "JeroenArsenal") then {															
+			_ammo1 = createVehicle [_x, _ammo_pos, [], 1, "NONE"];
+			_ammo1 allowDamage false;
+			_ammo1 setVariable ["GRLIB_vehicle_owner", "public", true];
+			if (_x != JeroenArsenal_typename) then {_ammo1 setVariable ["R3F_LOG_disabled", true, true]};																					   
+			if (_x == Arsenal_typename) then { _ammo1 addItemCargoGlobal ["SatchelCharge_Remote_Mag", 2] };
+			if (_x == JeroenArsenal_typename && isNil "JeroenArsenal") then {
+				JeroenArsenal = _ammo1;
+				publicVariable "JeroenArsenal";
+				// there should be a remote function instead of using "call" !
+				[JeroenArsenal, jn_fnc_arsenal_init] remoteExec ["call", 0];
+			};
+		};														   
 		sleep 0.5;
-	} forEach [Box_Weapon_typename, Box_Ammo_typename];
+	} forEach [Box_Weapon_typename, Box_Ammo_typename, JeroenArsenal_typename];
 };
