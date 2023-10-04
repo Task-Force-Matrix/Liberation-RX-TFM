@@ -76,7 +76,7 @@ sticky_bombs_typename = ["SatchelCharge_Remote_Ammo", "DemoCharge_Remote_Ammo"];
 LOADOUT_fixed_price = [];
 LOADOUT_expensive_items = [];
 LOADOUT_free_items = [];
-
+JeroenArsenal_typename = "Land_CargoBox_V1_F";
 // see https://community.bistudio.com/wiki/nearestTerrainObjects for list
 GRLIB_clutter_cutter = ["Tree","Bush","Hide","House","Fence","Ruins","Rock","Rocks","Building"];
 

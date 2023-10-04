@@ -84,7 +84,7 @@ private _side_west = "";
 private _side_east = "";
 private _warehouse = [];
 private _buildings_created = [];
-
+private _myArsenalSav = [];
 if ( !isNil "_lrx_liberation_savegame" ) then {
 	diag_log format [ "--- LRX Load Game start at %1", time ];
 
@@ -138,6 +138,7 @@ if ( !isNil "_lrx_liberation_savegame" ) then {
 	resources_intel = _lrx_liberation_savegame select 14;
 	GRLIB_player_scores = _lrx_liberation_savegame select 15;
 
+	if (GRLIB_enable_arsenal == 0) then {_myArsenalSav = _lrx_liberation_savegame select 16};	   
 	if ( GRLIB_force_load == 0 && typeName _side_west == "STRING" && typeName _side_east == "STRING" ) then {
 		if ( _side_west != GRLIB_mod_west || _side_east != GRLIB_mod_east ) exitWith {
 			abort_loading_msg = format [
@@ -330,6 +331,14 @@ if ( !isNil "_lrx_liberation_savegame" ) then {
 			[_nextbuilding] spawn fob_init_officer;
 		};		
         //diag_log format [ "--- LRX Load Game %1 loaded at %2.", typeOf _nextbuilding, time];
+		if ( _nextclass == JeroenArsenal_typename ) then {
+			if (isNil "JeroenArsenal") then {JeroenArsenal = _nextbuilding; publicVariable "JeroenArsenal";};
+			
+			// there should be a remote function instead of using "call" !
+			[JeroenArsenal, jn_fnc_arsenal_init] remoteExec ["call", 0];
+			JeroenArsenal setVariable ["jna_dataList", _myArsenalSav, true];
+			publicVariable "JeroenArsenal";
+		};												
 	} foreach (_s1 + _s2 + _s3);
 	sleep 1;
 

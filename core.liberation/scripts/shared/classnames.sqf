@@ -184,7 +184,8 @@ support_vehicles = support_vehicles + [
 	[basic_weapon_typename,0,round(150 / GRLIB_recycling_percentage),0,GRLIB_perm_hidden],
 	[waterbarrel_typename,0,110,0,GRLIB_perm_hidden],
 	[fuelbarrel_typename,0,120,50,GRLIB_perm_hidden],
-	[foodbarrel_typename,0,130,0,GRLIB_perm_hidden]
+	[foodbarrel_typename,0,130,0,GRLIB_perm_hidden],
+	[JeroenArsenal_typename,10,1000,0,GRLIB_perm_hidden]											 
 ] + support_vehicles_west;
 
 // *** BUILDINGS ***
