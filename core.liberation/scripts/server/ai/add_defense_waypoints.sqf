@@ -30,7 +30,7 @@ private _patrolcorners = [
 			_waypoint = _grp addWaypoint [_x, 0];
 			_waypoint setWaypointType "MOVE";
 			_waypoint setWaypointBehaviour "AWARE";
-			_waypoint setWaypointCombatMode "WHITE";
+			_waypoint setWaypointCombatMode "YELLOW";
 			_waypoint setWaypointSpeed "LIMITED";
 			_waypoint setWaypointCompletionRadius _completion_radius;
 		};
@@ -39,7 +39,7 @@ private _patrolcorners = [
 			_waypoint = _grp addWaypoint [_x, 20];
 			_waypoint setWaypointType "MOVE";
 			_waypoint setWaypointBehaviour "AWARE";
-			_waypoint setWaypointCombatMode "WHITE";
+			_waypoint setWaypointCombatMode "YELLOW";
 			_waypoint setWaypointSpeed "LIMITED";
 			_waypoint setWaypointCompletionRadius _completion_radius;
 		};
@@ -64,7 +64,7 @@ waitUntil {
 		_waypoint = _grp addWaypoint [_basepos, _radius];
 		_waypoint setWaypointType "MOVE";
 		_waypoint setWaypointBehaviour "AWARE";
-		_waypoint setWaypointCombatMode "WHITE";
+		_waypoint setWaypointCombatMode "YELLOW";
 		_waypoint setWaypointSpeed "LIMITED";
 		_waypoint = _grp addWaypoint [_basepos, _radius];
 		_waypoint setWaypointType "SAD";
