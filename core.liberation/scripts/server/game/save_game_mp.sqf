@@ -177,7 +177,10 @@ if ( GRLIB_endgame >= 1 || GRLIB_global_stop == 1 ) then {
 
     private _warehouse = [];
     {_warehouse pushBack (_x select 1)} forEach GRLIB_warehouse;
-
+	private _myArsenalSav = [];
+	if (GRLIB_enable_arsenal == 0 and !isNil "JeroenArsenal") then {	
+		_myArsenalSav = JeroenArsenal getVariable "jna_dataList"
+		};
     // Save Blob
     private _lrx_liberation_savegame = [
         blufor_sectors,
@@ -195,7 +198,8 @@ if ( GRLIB_endgame >= 1 || GRLIB_global_stop == 1 ) then {
         _permissions,
         _player_context,
         resources_intel,
-        _player_scores
+        _player_scores,
+		_myArsenalSav   
     ];
 
     profileNamespace setVariable [ GRLIB_save_key, _lrx_liberation_savegame ];
