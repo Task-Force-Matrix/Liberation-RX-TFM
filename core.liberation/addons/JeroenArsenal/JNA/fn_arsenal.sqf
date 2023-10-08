@@ -19,28 +19,26 @@
 
 #define FADE_DELAY  0.15
 
-#define GETDLC\
-    {\
-        pr _dlc = "";\
-        pr _addons = configsourceaddonlist _this;\
-        if (count _addons > 0) then {\
-            pr _mods = configsourcemodlist (configfile >> "CfgPatches" >> _addons select 0);\
-            if (count _mods > 0) then {\
-                _dlc = _mods select 0;\
-            };\
-        };\
-        _dlc\
-    }
+GETDLC = {
+        pr _dlc = "";
+        pr _addons = configsourceaddonlist _this;
+        if (count _addons > 0) then {
+            pr _mods = configsourcemodlist (configfile >> "CfgPatches" >> _addons select 0);
+            if (count _mods > 0) then {
+                _dlc = _mods select 0;
+            };
+        };
+        _dlc
+    };
 
-#define ADDMODICON\
-    {\
-        pr _dlcName = _this call GETDLC;\
+ADDMODICON = {
+        pr _dlcName = _this call GETDLC;
         if (_dlcName != "") then {\
-            _ctrlList lbsetpictureright [_lbAdd,(mod_a [_dlcName,["logo"]]) param [0,""]];\
-            _modID = _modList find _dlcName;\
-            if (_modID < 0) then {_modID = _modList pushback _dlcName;};\
-            _ctrlList lbsetvalue [_lbAdd,_modID];\
-        };\
+            _ctrlList lbsetpictureright [_lbAdd,(mod_a [_dlcName,["logo"]]) param [0,""]];
+            _modID = _modList find _dlcName;
+            if (_modID < 0) then {_modID = _modList pushback _dlcName;};
+            _ctrlList lbsetvalue [_lbAdd,_modID];
+        };
     };
 
 #define IDCS_LEFT\
@@ -89,9 +87,9 @@ _mode = [_this,0,"Open",[displaynull,""]] call bis_fnc_param;
 _this = [_this,1,[]] call bis_fnc_param;
 
 
-if!(_mode in ["draw3D","KeyDown","ListCurSel"])then{
-    diag_log format["JNA mode: %1 %2", _mode, _this];
-};
+// if!(_mode in ["draw3D","KeyDown","ListCurSel"])then{
+//     diag_log format["JNA mode: %1 %2", _mode, _this];
+// };
 
 switch _mode do {
 

@@ -20,7 +20,7 @@
 params["_vehicleFrom","_rearmCargoCapacity",["_rearmCargo",0]];
 
 //check if it already has a action
-if !isnil(_vehicleFrom getVariable "rearmAction_id")exitWith{diag_log ("JN_ammo already init for object: "+str _vehicleFrom)};
+if (!isnil(_vehicleFrom getVariable "rearmAction_id"))exitWith{diag_log ("JN_ammo already init for object: "+str _vehicleFrom)};
 
 pr _id = _vehicleFrom addaction [
 	"",

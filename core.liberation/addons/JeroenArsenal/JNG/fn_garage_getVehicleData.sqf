@@ -15,7 +15,7 @@ pr _name = _vehicle getVariable ["JNA_Name",_displayName];
 //damage
 pr _damage = getAllHitPointsDamage _vehicle;
 if(_damage isEqualTo [])then{
-	_damage = getDammage _vehicle;
+	_damage = damage _vehicle;
 }else{
 	_damage = _damage select 2;
 };
@@ -133,9 +133,6 @@ pr _locked = getPlayerUID player;
 pr _lockedName = name player;
 
 //return
-COMPILE_SAVE
+COMPILE_SAVE;
 
-_data
-
-
-
+_data;

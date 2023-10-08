@@ -59,7 +59,7 @@ steal_weapon = {
 	if(_unit distance _disarm<4)then{
 		sleep 1;
 		hint "Further or I shoot you";
-	}
+	};
 	
 	sleep 3;
 	
