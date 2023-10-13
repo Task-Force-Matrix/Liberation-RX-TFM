@@ -478,8 +478,10 @@ opfor_squad_8_standard = [
 	opfor_medic,
 	opfor_machinegunner,
 	opfor_rpg,
+	opfor_heavygunner,			   
 	opfor_sharpshooter,
-	opfor_marksman
+	opfor_marksman,
+	opfor_grenadier			
 ];
 opfor_squad_8_infkillers = [
 	opfor_squad_leader,

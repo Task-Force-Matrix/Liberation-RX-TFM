@@ -88,13 +88,6 @@ opfor_vehicles = [
 	"O_MBT_04_command_F"
 ];
 
-// opfor_vehicles_tanks = [
-	// "O_MBT_02_cannon_F",
-	// "O_MBT_02_cannon_F",
-	// "O_MBT_04_cannon_F",
-	// "O_MBT_04_command_F"
-// ];
-
 opfor_vehicles_low_intensity = [
 	"O_APC_Tracked_02_cannon_F",
 	"O_APC_Wheeled_02_rcws_v2_F",
@@ -154,12 +147,6 @@ opfor_air = [
 	"O_Plane_CAS_02_F",
 	"O_Plane_Fighter_02_F"
 ];
-
-// opfor_air_heli = [
-	// "O_Heli_Light_02_dynamicLoadout_F",
-	// "O_Heli_Attack_02_dynamicLoadout_black_F",
-	// "O_Heli_Attack_02_dynamicLoadout_F"
-// ];
 
 opfor_statics = [
 	"O_HMG_01_high_F",
