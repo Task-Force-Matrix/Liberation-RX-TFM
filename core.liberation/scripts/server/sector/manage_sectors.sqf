@@ -27,6 +27,6 @@ while { GRLIB_endgame == 0 && GRLIB_global_stop == 0 } do {
 		sleep 0.25;
 	} foreach opfor_sectors;
 
-	//diag_log format [ "Full sector scan at %1, active sectors: %2", time, active_sectors ];
+	// diag_log format [ "Full sector scan at %1, active sectors: %2", time, active_sectors ];
 	sleep 4;
 };

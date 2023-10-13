@@ -67,9 +67,9 @@ if ( (!(_sector in blufor_sectors)) &&  ( ( [getmarkerpos _sector , GRLIB_sector
 	if ( _sector in sectors_capture ) then {
 		_vehtospawn = "sector_capture" call F_getAdaptiveVehicle;
 		_infsquad = "militia";
-		while { count _squad1 < ( 20 * _popfactor) } do { _squad1 pushback (selectRandom militia_squad) };
+		while { count _squad1 < ( 15 * _popfactor) } do { _squad1 pushback (selectRandom militia_squad) };
 		// if(floor(random 100) > (33 / GRLIB_difficulty_modifier)) then { _vehtospawn pushback (selectRandom militia_vehicles); };
-		// if(floor(random 100) > (66 / GRLIB_difficulty_modifier)) then { _vehtospawn pushback (selectRandom militia_vehicles); };
+		if(floor(random 100) > (66 / GRLIB_difficulty_modifier)) then { _vehtospawn pushback (selectRandom militia_vehicles); };
 		_spawncivs = true;
 		_building_ai_max = round ((floor (10 + (round (combat_readiness / 10 )))) * _popfactor);
 		_building_range = 200;
@@ -81,15 +81,15 @@ if ( (!(_sector in blufor_sectors)) &&  ( ( [getmarkerpos _sector , GRLIB_sector
 		_infsquad = "csat";
 		_squad1 = ([] call F_getAdaptiveSquadComp);
 		_squad2 = ([] call F_getAdaptiveSquadComp);
-		if ( GRLIB_unitcap >= 1.5) then {
+		if ( GRLIB_unitcap >= 1) then {
 			_squad3 = ([] call F_getAdaptiveSquadComp);
 		};
 		if ( GRLIB_unitcap >= 2) then {
 			_squad4 = ([] call F_getAdaptiveSquadComp);
 		};
 		_vehtospawn = "sector_mil" call F_getAdaptiveVehicle;
-		// if(floor(random 100) > (33 / GRLIB_difficulty_modifier)) then { _vehtospawn pushback ( [] call F_getAdaptiveVehicle ); };
-		if(floor(random 100) > (66 / GRLIB_difficulty_modifier)) then { _vehtospawn append ( "sector_mil" call F_getAdaptiveVehicle ); };
+		if(floor(random 100) > (45 / GRLIB_difficulty_modifier)) then { _vehtospawn pushback ( [] call F_getAdaptiveVehicle ); };
+		// if(floor(random 100) > (66 / GRLIB_difficulty_modifier)) then { _vehtospawn append ( "sector_mil" call F_getAdaptiveVehicle ); };
 		_spawncivs = false;
 		_building_ai_max = round ((floor (8 + (round (combat_readiness / 10 )))) * _popfactor);
 		_building_range = 110;
@@ -115,10 +115,10 @@ if ( (!(_sector in blufor_sectors)) &&  ( ( [getmarkerpos _sector , GRLIB_sector
 		_infsquad = "militia";
 		_squad1 = ([] call F_getAdaptiveSquadComp);
 		_squad2 = ([] call F_getAdaptiveSquadComp);
-		if ( GRLIB_unitcap >= 1.25) then {
+		if ( GRLIB_unitcap >= 1.5) then {
 			_squad3 = ([] call F_getAdaptiveSquadComp);
 		};
-		if(floor(random 100) > 66) then { _vehtospawn append ( "sector_factory" call F_getAdaptiveVehicle ); };
+		if(floor(random 100) > 90) then { _vehtospawn append ( "sector_factory" call F_getAdaptiveVehicle ); };
 		// if(floor(random 100) > 33) then { _vehtospawn pushback (selectRandom militia_vehicles); };
 		_spawncivs = true;
 		_building_ai_max = round ((floor (10 + (round (combat_readiness / 10 )))) * _popfactor);
@@ -128,7 +128,7 @@ if ( (!(_sector in blufor_sectors)) &&  ( ( [getmarkerpos _sector , GRLIB_sector
 	};
 
 	if ( _sector in sectors_tower ) then {
-		_vehtospawn = "sector_mil" call F_getAdaptiveVehicle;
+		_vehtospawn = "sector_tower" call F_getAdaptiveVehicle;
 		_spawncivs = false;
 		_squad1 = ([] call F_getAdaptiveSquadComp);
 		_squad2 = ([] call F_getAdaptiveSquadComp);
@@ -136,7 +136,7 @@ if ( (!(_sector in blufor_sectors)) &&  ( ( [getmarkerpos _sector , GRLIB_sector
 			_squad2 = ([] call F_getAdaptiveSquadComp);
 		};
 		_building_ai_max = 0;
-		if(floor(random 100) > 80) then { _vehtospawn append ( "sector_factory" call F_getAdaptiveVehicle ); };
+		// if(floor(random 100) > 80) then { _vehtospawn append ( "sector_factory" call F_getAdaptiveVehicle ); };
 		[markerPos _sector, 50] call createlandmines;
 		_defensecount = 3;
 	};
@@ -179,7 +179,7 @@ if ( (!(_sector in blufor_sectors)) &&  ( ( [getmarkerpos _sector , GRLIB_sector
 
 	if ( count _squad1 > 0 ) then {
 		_grp = [ _sector, _infsquad, _squad1 ] call F_spawnRegularSquad;
-		[ _grp, _sectorpos, 350 ] spawn add_defense_waypoints;
+		[ _grp, _sectorpos, 300 ] spawn add_defense_waypoints;
 		_managed_units = _managed_units + (units _grp);
 		sleep 2;
 	};

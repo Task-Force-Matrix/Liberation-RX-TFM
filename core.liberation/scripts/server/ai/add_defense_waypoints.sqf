@@ -1,4 +1,4 @@
-params ["_grp", "_flagpos", ["_radius", 100]];
+params ["_grp", "_flagpos", ["_radius", 300]];
 if (isNil "_grp" || isNil "_flagpos") exitWith {};
 if (isNull _grp) exitWith {};
 
@@ -15,12 +15,28 @@ if (_grp_veh isKindOf "Ship") then {
 };
 if (_patrol_in_water) then { _radius = 200 };
 
-private _patrolcorners = [
-	[ (_flagpos select 0) - _radius, (_flagpos select 1) - _radius, 0 ],
-	[ (_flagpos select 0) + _radius, (_flagpos select 1) - _radius, 0 ],
-	[ (_flagpos select 0) + _radius, (_flagpos select 1) + _radius, 0 ],
-	[ (_flagpos select 0) - _radius, (_flagpos select 1) + _radius, 0 ]
-];
+// private _patrolcorners = [
+	// [ (_flagpos select 0) - _radius, (_flagpos select 1) - _radius, 0 ],
+	// [ (_flagpos select 0) + _radius, (_flagpos select 1) - _radius, 0 ],
+	// [ (_flagpos select 0) + _radius, (_flagpos select 1) + _radius, 0 ],
+	// [ (_flagpos select 0) - _radius, (_flagpos select 1) + _radius, 0 ]
+// ];
+
+private _patrolcorners = [];
+
+if (_patrol_in_water) then {
+_patrolcorners = [
+	([_flagpos, 50, _radius, 3, 2, 5, 0] call BIS_fnc_findSafePos) + [0],
+	([_flagpos, 50, _radius, 3, 2, 5, 0] call BIS_fnc_findSafePos) + [0],
+	([_flagpos, 50, _radius, 3, 2, 5, 0] call BIS_fnc_findSafePos) + [0],
+	([_flagpos, 50, _radius, 3, 2, 5, 0] call BIS_fnc_findSafePos) + [0]
+]; } else {
+_patrolcorners = [
+	([_flagpos, 75, _radius, 3, 0, 20, 0] call BIS_fnc_findSafePos) + [0],
+	([_flagpos, 75, _radius, 3, 0, 20, 0] call BIS_fnc_findSafePos) + [0],
+	([_flagpos, 75, _radius, 3, 0, 20, 0] call BIS_fnc_findSafePos) + [0],
+	([_flagpos, 75, _radius, 3, 0, 20, 0] call BIS_fnc_findSafePos) + [0]
+]; };
 
 [_grp] call F_deleteWaypoints;
 

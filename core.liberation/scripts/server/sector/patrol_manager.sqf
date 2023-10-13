@@ -7,7 +7,7 @@ private _vehicle = objNull;
 // Create Infantry
 if (_patrol_type == 1) then {
     _grp = [markerpos _sector, ([] call F_getAdaptiveSquadComp), GRLIB_side_enemy, "infantry"] call F_libSpawnUnits;
-    [_grp, markerpos _sector, 150] spawn add_defense_waypoints;
+    [_grp, markerpos _sector, 300] spawn add_defense_waypoints;
     diag_log format [ "Spawn Infantry Patrol on sector %1 at %2", _sector, time ];
 };
 
@@ -16,7 +16,7 @@ if (_patrol_type == 2) then {
     _vehicle = [markerpos _sector, ([] call F_getAdaptiveVehicle)] call F_libSpawnVehicle;
     if (!isNull _vehicle) then {
         _grp = group ((crew _vehicle) select 0);
-        [_grp, markerpos _sector, 250] spawn add_defense_waypoints;
+        [_grp, markerpos _sector, 300] spawn add_defense_waypoints;
         diag_log format [ "Spawn Armored Patrol on sector %1 at %2", _sector, time ];
     };
 };
