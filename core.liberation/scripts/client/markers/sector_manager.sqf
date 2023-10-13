@@ -40,7 +40,7 @@ while { GRLIB_endgame == 0 } do {
 	if (GRLIB_hide_opfor && _sector_left > 3) then {
 		{ 
 			_sector_pos = markerPos _x;
-			_nearest_sector = [(GRLIB_sector_size * 3), _sector_pos, blufor_sectors] call F_getNearestSector;
+			_nearest_sector = [(GRLIB_sector_size * 2.5), _sector_pos, blufor_sectors] call F_getNearestSector;
 			_nearset_fob = [_sector_pos] call F_getNearestFob;
 			_near_fob = false;
 			if !(_nearset_fob isEqualTo zeropos) then {

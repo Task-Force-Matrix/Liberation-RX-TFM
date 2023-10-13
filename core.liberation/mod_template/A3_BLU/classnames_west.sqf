@@ -77,39 +77,39 @@ light_vehicles = [
 ];
 
 heavy_vehicles = [
-	["B_APC_Tracked_01_rcws_F",10,500,20,GRLIB_perm_log],
-	["B_APC_Wheeled_01_cannon_F",10,500,20,GRLIB_perm_log],
-	["B_APC_Tracked_01_AA_F",10,500,20,GRLIB_perm_tank],
-	["I_APC_Wheeled_03_cannon_F",10,500,20,GRLIB_perm_tank],
-	["B_MBT_01_cannon_F",15,1000,35,GRLIB_perm_tank],
-	["B_MBT_01_TUSK_F",15,1500,35,GRLIB_perm_air],
-	["B_AFV_Wheeled_01_cannon_F",15,3000,35,GRLIB_perm_max],
-	["B_AFV_Wheeled_01_up_cannon_F",15,3500,35,GRLIB_perm_max],
+	["B_APC_Tracked_01_rcws_F",10,1200,100,GRLIB_perm_log],
+	["B_APC_Wheeled_01_cannon_F",10,1200,100,GRLIB_perm_log],
+	["B_APC_Tracked_01_AA_F",10,1000,20,GRLIB_perm_tank],
+	["I_APC_Wheeled_03_cannon_F",10,1000,50,GRLIB_perm_tank],
+	["B_MBT_01_cannon_F",15,3000,70,GRLIB_perm_tank],
+	["B_MBT_01_TUSK_F",15,3000,35,GRLIB_perm_air],
+	["B_AFV_Wheeled_01_cannon_F",15,5000,35,GRLIB_perm_max],
+	["B_AFV_Wheeled_01_up_cannon_F",15,5000,35,GRLIB_perm_max],
 	["B_MBT_01_arty_F",15,3500,30,GRLIB_perm_max],
-	["B_MBT_01_mlrs_F",20,5000,30,GRLIB_perm_max]
+	["B_MBT_01_mlrs_F",20,7000,30,GRLIB_perm_max]
 ];
 
 air_vehicles = [
 	["B_UAV_01_F",1,10,5,GRLIB_perm_log],
 	["B_UAV_06_F",1,30,5,GRLIB_perm_tank],
-	["B_UAV_02_dynamicLoadout_F",5,1000,5,GRLIB_perm_air],
-	["B_T_UAV_03_dynamicLoadout_F",5,1500,10,GRLIB_perm_max],
-	["B_UAV_05_F",5,2000,15,GRLIB_perm_max],
+	["B_UAV_02_dynamicLoadout_F",5,2000,5,GRLIB_perm_air],
+	["B_T_UAV_03_dynamicLoadout_F",5,2800,10,GRLIB_perm_max],
+	["B_UAV_05_F",5,3000,15,GRLIB_perm_max],
 	["C_Plane_Civil_01_F",1,50,5,GRLIB_perm_air],
 	["B_Heli_Light_01_F",1,50,15,GRLIB_perm_log],
-	["B_Heli_Light_01_dynamicLoadout_F",1,150,15,GRLIB_perm_tank],
-	["I_Heli_light_03_unarmed_F",1,50,5,GRLIB_perm_tank],
-	["I_Heli_light_03_dynamicLoadout_F",10,500,20,GRLIB_perm_air],
+	["B_Heli_Light_01_dynamicLoadout_F",1,400,15,GRLIB_perm_tank],
+	["I_Heli_light_03_unarmed_F",1,100,5,GRLIB_perm_tank],
+	["I_Heli_light_03_dynamicLoadout_F",10,800,20,GRLIB_perm_air],
 	//["I_Plane_Fighter_03_dynamicLoadout_F", 10,3500,20,GRLIB_perm_max],
 	["B_Heli_Transport_03_F",10,1700,35,GRLIB_perm_air],
 	["B_Heli_Transport_01_F",10,2000,35,GRLIB_perm_tank],
-	["B_T_VTOL_01_infantry_F",10,1300,40,GRLIB_perm_air],
-	["B_T_VTOL_01_vehicle_F",10,1400,40,GRLIB_perm_air],
-	["B_T_VTOL_01_armed_F",20,2500,40,GRLIB_perm_max],
-	["B_Heli_Attack_01_dynamicLoadout_F",10,2250,30,GRLIB_perm_air],
-	["B_Plane_CAS_01_dynamicLoadout_F",20,3000,50,GRLIB_perm_max],
-	["B_Plane_Fighter_01_F",20,4500,50,GRLIB_perm_max],
-	["B_Plane_Fighter_01_Stealth_F",20,2000,50,GRLIB_perm_max]
+	["B_T_VTOL_01_infantry_F",10,1800,40,GRLIB_perm_air],
+	["B_T_VTOL_01_vehicle_F",10,1800,40,GRLIB_perm_air],
+	["B_T_VTOL_01_armed_F",20,3500,40,GRLIB_perm_max],
+	["B_Heli_Attack_01_dynamicLoadout_F",10,4000,30,GRLIB_perm_air],
+	["B_Plane_CAS_01_dynamicLoadout_F",20,6000,50,GRLIB_perm_max],
+	["B_Plane_Fighter_01_F",20,8500,50,GRLIB_perm_max],
+	["B_Plane_Fighter_01_Stealth_F",20,4500,50,GRLIB_perm_max]
 ];
 
 blufor_air = [
@@ -127,9 +127,9 @@ static_vehicles = [
 	["B_static_AA_F",0,150,0,GRLIB_perm_tank],
 	["B_static_AT_F",0,150,0,GRLIB_perm_tank],
 	["B_Mortar_01_F",0,500,0,GRLIB_perm_tank],
-	["B_SAM_System_01_F",10,1500,0,GRLIB_perm_air],
-	["B_SAM_System_02_F",10,1500,0,GRLIB_perm_air],
-	["B_AAA_System_01_F",10,1500,0,GRLIB_perm_max]
+	["B_SAM_System_01_F",10,2300,0,GRLIB_perm_air],
+	["B_SAM_System_02_F",10,2300,0,GRLIB_perm_air],
+	["B_AAA_System_01_F",10,2300,0,GRLIB_perm_max]
 ];
 
 // *** Static Weapon with AI ***

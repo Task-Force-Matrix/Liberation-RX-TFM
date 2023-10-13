@@ -1,4 +1,4 @@
-params ["_grp", "_flagpos", ["_radius", 100]];
+params ["_grp", "_flagpos", ["_radius", 300]];
 if (isNil "_grp" || isNil "_flagpos") exitWith {};
 if (isNull _grp) exitWith {};
 
@@ -13,14 +13,30 @@ if (_grp_veh isKindOf "Ship") then {
 	_flagpos = getPosATL _grp_veh;
 	_patrol_in_water = true;
 };
-if (_patrol_in_water) then { _radius = 60 };
+if (_patrol_in_water) then { _radius = 200 };
 
-private _patrolcorners = [
-	[ (_flagpos select 0) - _radius, (_flagpos select 1) - _radius, 0 ],
-	[ (_flagpos select 0) + _radius, (_flagpos select 1) - _radius, 0 ],
-	[ (_flagpos select 0) + _radius, (_flagpos select 1) + _radius, 0 ],
-	[ (_flagpos select 0) - _radius, (_flagpos select 1) + _radius, 0 ]
-];
+// private _patrolcorners = [
+	// [ (_flagpos select 0) - _radius, (_flagpos select 1) - _radius, 0 ],
+	// [ (_flagpos select 0) + _radius, (_flagpos select 1) - _radius, 0 ],
+	// [ (_flagpos select 0) + _radius, (_flagpos select 1) + _radius, 0 ],
+	// [ (_flagpos select 0) - _radius, (_flagpos select 1) + _radius, 0 ]
+// ];
+
+private _patrolcorners = [];
+
+if (_patrol_in_water) then {
+_patrolcorners = [
+	([_flagpos, 50, _radius, 3, 2, 5, 0] call BIS_fnc_findSafePos) + [0],
+	([_flagpos, 50, _radius, 3, 2, 5, 0] call BIS_fnc_findSafePos) + [0],
+	([_flagpos, 50, _radius, 3, 2, 5, 0] call BIS_fnc_findSafePos) + [0],
+	([_flagpos, 50, _radius, 3, 2, 5, 0] call BIS_fnc_findSafePos) + [0]
+]; } else {
+_patrolcorners = [
+	([_flagpos, 75, _radius, 3, 0, 20, 0] call BIS_fnc_findSafePos) + [0],
+	([_flagpos, 75, _radius, 3, 0, 20, 0] call BIS_fnc_findSafePos) + [0],
+	([_flagpos, 75, _radius, 3, 0, 20, 0] call BIS_fnc_findSafePos) + [0],
+	([_flagpos, 75, _radius, 3, 0, 20, 0] call BIS_fnc_findSafePos) + [0]
+]; };
 
 [_grp] call F_deleteWaypoints;
 
@@ -30,7 +46,7 @@ private _patrolcorners = [
 			_waypoint = _grp addWaypoint [_x, 0];
 			_waypoint setWaypointType "MOVE";
 			_waypoint setWaypointBehaviour "AWARE";
-			_waypoint setWaypointCombatMode "WHITE";
+			_waypoint setWaypointCombatMode "YELLOW";
 			_waypoint setWaypointSpeed "LIMITED";
 			_waypoint setWaypointCompletionRadius _completion_radius;
 		};
@@ -39,7 +55,7 @@ private _patrolcorners = [
 			_waypoint = _grp addWaypoint [_x, 20];
 			_waypoint setWaypointType "MOVE";
 			_waypoint setWaypointBehaviour "AWARE";
-			_waypoint setWaypointCombatMode "WHITE";
+			_waypoint setWaypointCombatMode "YELLOW";
 			_waypoint setWaypointSpeed "LIMITED";
 			_waypoint setWaypointCompletionRadius _completion_radius;
 		};
@@ -64,7 +80,7 @@ waitUntil {
 		_waypoint = _grp addWaypoint [_basepos, _radius];
 		_waypoint setWaypointType "MOVE";
 		_waypoint setWaypointBehaviour "AWARE";
-		_waypoint setWaypointCombatMode "RED";
+		_waypoint setWaypointCombatMode "YELLOW";
 		_waypoint setWaypointSpeed "LIMITED";
 		_waypoint = _grp addWaypoint [_basepos, _radius];
 		_waypoint setWaypointType "SAD";

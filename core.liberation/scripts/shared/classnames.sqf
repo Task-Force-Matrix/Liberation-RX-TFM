@@ -161,10 +161,10 @@ if (GRLIB_enable_arsenal == 1) then {
 // [CLASSNAME, MANPOWER, AMMO, FUEL, RANK]
 support_vehicles = support_vehicles + [
 	[medicalbox_typename,5,25,0,0],
-	[mobile_respawn,10,50,0,0],
+	[mobile_respawn,10,50,0,GRLIB_perm_hidden],
 	[canister_fuel_typename,0,25,0,0],
 	[playerbox_typename,0,0,0,20],
-	[Respawn_truck_typename,10,450,15,GRLIB_perm_log],
+	[Respawn_truck_typename,10,650,15,GRLIB_perm_tank],
 	[huron_typename,10,1550,35,GRLIB_perm_tank],
 	["Land_RepairDepot_01_civ_F",10,300,0,GRLIB_perm_log],
 	["Land_MedicalTent_01_MTP_closed_F",5,100,0,GRLIB_perm_log],
@@ -471,8 +471,6 @@ opfor_squad_low_intensity = [
 	opfor_rpg,
 	opfor_marksman,
 	opfor_rifleman,
-	opfor_sentry,
-	opfor_sentry,
 	opfor_sentry
 ];
 opfor_squad_8_standard = [
@@ -480,22 +478,17 @@ opfor_squad_8_standard = [
 	opfor_medic,
 	opfor_machinegunner,
 	opfor_rpg,
-	opfor_heavygunner,
 	opfor_sharpshooter,
-	opfor_marksman,
-	opfor_grenadier
+	opfor_marksman
 ];
 opfor_squad_8_infkillers = [
 	opfor_squad_leader,
 	opfor_medic,
 	opfor_machinegunner,
-	opfor_heavygunner,
 	opfor_marksman,
 	opfor_sniper,
 	opfor_sharpshooter,
-	opfor_rifleman,
-	opfor_rifleman,
-	opfor_rpg
+	opfor_rifleman
 ];
 opfor_squad_8_tankkillers = [
 	opfor_squad_leader,
@@ -503,7 +496,6 @@ opfor_squad_8_tankkillers = [
 	opfor_machinegunner,
 	opfor_rpg,
 	opfor_rpg,
-	opfor_at,
 	opfor_at,
 	opfor_at
 ];
@@ -515,8 +507,6 @@ opfor_squad_8_airkillers = [
 	opfor_aa,
 	opfor_aa,
 	opfor_aa,	
-	opfor_aa,
-	opfor_aa,
 	opfor_aa
 ];
 

@@ -34,7 +34,7 @@ if (_item isKindOf ["CBA_MiscItem", configFile >> "cfgWeapons"]) exitWith { IDC_
 
 
 // Do the usual class resolution
-INITTYPES
+INITTYPES;
 
 (_item call bis_fnc_itemType) params ["_weaponTypeCategory", "_weaponTypeSpecific"];
 
